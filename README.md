@@ -62,7 +62,6 @@ DB_USERNAME=laravel_user
 
 DB_PASSWORD=laravel_pass
 
-
 MAIL_MAILER=smtp
 
 MAIL_HOST=mailhog
@@ -79,26 +78,15 @@ MAIL_FROM_ADDRESS=no-reply@example.com
 
 MAIL_FROM_NAME="COACHTECH"
 
-
-
 ### ④ php artisan key:generate
-
-
-
 
 ## 開発環境
 
-### ・商品一覧画面（トップページ）：http://localhost/
-
-### ・会員登録画面：http://localhost/register
-
-### ・ログイン画面:http://localhost/login
+_昨日の実装が進み次第、随時追記_
 
 ### ・phpMyAdmin：http://localhost:8080/
 
 ### ・MailHog:http://localhost:8025/
-
-
 
 # 使用技術（実行環境）
 
