@@ -82,7 +82,7 @@ MAIL_FROM_NAME="COACHTECH"
 
 ## 開発環境
 
-_昨日の実装が進み次第、随時追記_
+_機能の実装が進み次第、随時追記_
 
 ### ・phpMyAdmin：http://localhost:8080/
 
