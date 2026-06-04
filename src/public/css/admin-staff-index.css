@@ -1,0 +1,101 @@
+.staff-list {
+    min-height: calc(100vh - 80px);
+    background: #f1f0f4;
+    padding: 120px 20px 80px;
+}
+
+.staff-list__inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.staff-list__title {
+    position: relative;
+    margin: 0 0 90px;
+    padding-left: 24px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #000;
+}
+
+.staff-list__title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 8px;
+    height: 40px;
+    background: #000;
+    transform: translateY(-50%);
+}
+
+.staff-list__table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.staff-list__table {
+    width: 100%;
+    min-width: 720px;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.staff-list__table th,
+.staff-list__table td {
+    height: 46px;
+    padding: 0 20px;
+    border-bottom: 2px solid #e5e5e5;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: #737373;
+    letter-spacing: 0.08em;
+}
+
+.staff-list__table th {
+    color: #737373;
+}
+
+.staff-list__table tr:last-child td {
+    border-bottom: none;
+}
+
+.staff-list__detail {
+    color: #000;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.staff-list__detail:hover {
+    opacity: 0.7;
+}
+
+/* tablet */
+@media screen and (min-width: 768px) and (max-width: 850px) {
+    .staff-list {
+        padding: 90px 40px 60px;
+    }
+
+    .staff-list__inner {
+        max-width: 680px;
+    }
+
+    .staff-list__title {
+        margin-bottom: 70px;
+        font-size: 24px;
+    }
+
+    .staff-list__table {
+        min-width: 620px;
+    }
+
+    .staff-list__table th,
+    .staff-list__table td {
+        padding: 0 14px;
+        font-size: 14px;
+    }
+}
+
