@@ -13,7 +13,7 @@ class StampCorrectionRequestSeeder extends Seeder
     {
         $admin = Admin::first();
 
-        $attendances = Attendance::take(3)->get();
+        $attendances = Attendance::take(2)->get();
 
         // 承認待ち
         StampCorrectionRequest::create([
@@ -26,7 +26,7 @@ class StampCorrectionRequestSeeder extends Seeder
         ]);
 
         // 承認済み
-        StampCorrectionRequest::create([
+        $approvedRequest=StampCorrectionRequest::create([
             'user_id' => $attendances[1]->user_id,
             'attendance_id' => $attendances[1]->id,
             'requested_clock_in' => '08:50:00',
@@ -37,16 +37,11 @@ class StampCorrectionRequestSeeder extends Seeder
             'approved_by' => $admin->id,
         ]);
 
-        // 却下
-        StampCorrectionRequest::create([
-            'user_id' => $attendances[2]->user_id,
-            'attendance_id' => $attendances[2]->id,
-            'requested_clock_in' => '08:30:00',
-            'requested_clock_out' => '18:30:00',
-            'reason' => '申請却下テスト',
-            'status' => 2,
-            'approved_at' => now(),
-            'approved_by' => $admin->id,
+        // 承認済みなので、正式な勤怠情報も更新する
+        $approvedRequest->attendance->update([
+            'clock_in' => '08:50:00',
+            'clock_out' => '18:10:00',
         ]);
+
     }
 }

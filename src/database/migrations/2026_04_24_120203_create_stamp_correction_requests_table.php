@@ -24,7 +24,7 @@ return new class extends Migration
 
             $table->string('reason');
 
-            // 0: 承認待ち, 1: 承認済み, 2: 却下
+            // 0: 承認待ち, 1: 承認済み
             $table->tinyInteger('status')->default(0);
 
             $table->timestamp('approved_at')->nullable();

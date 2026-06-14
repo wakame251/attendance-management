@@ -10,7 +10,6 @@ class StampCorrectionRequest extends Model
 {
     public const STATUS_PENDING = 0;
     public const STATUS_APPROVED = 1;
-    public const STATUS_REJECTED = 2;
 
     protected $fillable = [
         'user_id',
@@ -57,8 +56,4 @@ class StampCorrectionRequest extends Model
         return $this->status === self::STATUS_APPROVED;
     }
 
-    public function isRejected(): bool
-    {
-        return $this->status === self::STATUS_REJECTED;
-    }
 }

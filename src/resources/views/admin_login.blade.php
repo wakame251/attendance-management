@@ -29,7 +29,7 @@
     @endif
   </div>
 
-  <form class="auth__form" method="POST" action="{{ route('login') }}">
+  <form class="auth__form" method="POST" action="{{ route('admin.login.store') }}">
     @csrf
 
     <input type="hidden" name="login_type" value="admin">

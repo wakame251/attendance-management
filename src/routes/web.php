@@ -5,14 +5,17 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\StampCorrectionRequestController;
+use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\AdminAttendanceController;
 use App\Http\Controllers\AdminStaffController;
 use App\Http\Controllers\AdminStampCorrectionRequestController;
 
 
-Route::get('/admin/login', function () {
-    return view('admin_login');
-})->name('admin.login');
+Route::get('/admin/login', [AdminLoginController::class, 'create'])
+    ->name('admin.login');
+
+Route::post('/admin/login', [AdminLoginController::class, 'store'])
+    ->name('admin.login.store');
 
 Route::get('/email/verify', function () {
     return view('auth.verify-email'); // ★自作ビュー
@@ -81,7 +84,7 @@ Route::middleware('auth:admin')->group(function () {
         [AdminStampCorrectionRequestController::class,'index'])
         ->name('stamp_correction_requests.admin.index');
 
-    Route::get('/admin/stamp_correction_request/approve/      {attendance_correct_request_id}',
+    Route::get('/admin/stamp_correction_request/approve/{attendance_correct_request_id}',
         [AdminStampCorrectionRequestController::class,'create'])
         ->name('stamp_correction_requests.admin.create');
 
