@@ -12,7 +12,7 @@
 
 ## 主な機能
 
-###　一般ユーザー（スタッフ）
+### 一般ユーザー（スタッフ）
 
 - 会員登録 / ログイン機能（Laravel Fortify）
 - 勤怠の打刻機能（出退勤時刻や休憩の入り・戻り時刻の登録）
@@ -21,7 +21,7 @@
 - 勤怠の修正および申請機能
 - 勤怠修正申請の一覧表示
 
-###　管理者
+### 管理者
 
 - ログイン機能
 - スタッフの勤怠一覧の表示
@@ -38,7 +38,7 @@
 
 ## Dockerビルド
 
-### ①git clone git@github.com:wakame251/free-market.git
+### ①git clone git@github.com:wakame251/attendance-management.git
 
 ### ②cd attendance-management
 
@@ -80,9 +80,26 @@ MAIL_FROM_NAME="COACHTECH"
 
 ### ④ php artisan key:generate
 
+### ⑤ php artisan migrate --seed
+
+# テストケースについて
+
+---
+
+_各機能のテストについては、以下のコマンドで実行_
+
+### php artisan test
+
+
 ## 開発環境
 
-_機能の実装が進み次第、随時追記_
+---
+
+### 会員登録画面（一般ユーザー）：http://localhost/register
+
+### ログイン画面（一般ユーザー）：http://localhost/login
+
+### ログイン画面（管理者）：http://localhost/admin/login
 
 ### ・phpMyAdmin：http://localhost:8080/
 
