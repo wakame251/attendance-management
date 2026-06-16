@@ -95,11 +95,11 @@ _各機能のテストについては、以下のコマンドで実行_
 
 ---
 
-### 会員登録画面（一般ユーザー）：http://localhost/register
+### ・会員登録画面（一般ユーザー）：http://localhost/register
 
-### ログイン画面（一般ユーザー）：http://localhost/login
+### ・ログイン画面（一般ユーザー）：http://localhost/login
 
-### ログイン画面（管理者）：http://localhost/admin/login
+### ・ログイン画面（管理者）：http://localhost/admin/login
 
 ### ・phpMyAdmin：http://localhost:8080/
 
