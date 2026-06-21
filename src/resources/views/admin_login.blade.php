@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{ asset('css/auth.css') }}?v=2">
 @endsection
 
-@section('title', 'ログイン')
+@section('title', '管理者ログイン')
 
 @section('header')
   @include('components.headers.guest')
@@ -23,7 +23,6 @@
       </ul>
     @endif
 
-    {{-- 認証失敗（Fortify）はここに出る想定。文言を要件に寄せる --}}
     @if (session('status'))
       <p>{{ session('status') }}</p>
     @endif
@@ -33,14 +32,14 @@
     @csrf
 
     <input type="hidden" name="login_type" value="admin">
-    <label class="auth__label">メールアドレス</label>
-    <input class="auth__input" type="text" name="email" value="{{ old('email') }}">
 
-    <label class="auth__label">パスワード</label>
-    <input class="auth__input" type="password" name="password">
+    <label class="auth__label" for="email">メールアドレス</label>
+    <input id="email" class="auth__input" type="email" name="email" value="{{ old('email') }}">
+
+    <label class="auth__label" for="password">パスワード</label>
+    <input id="password" class="auth__input" type="password" name="password">
 
     <button class="auth__button" type="submit">管理者ログインする</button>
   </form>
-
-
+</div>
 @endsection
